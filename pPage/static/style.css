@@ -1,9 +1,9 @@
 * {
     margin: 0;
-    padding: 20px;
+    padding: 50px 50px;
     box-sizing: border-box;
-    background-color: rgb(185, 191, 211);
-    color: blue;
+    background-color: rgb(43, 106, 136);
+    color: rgb(0, 255, 242);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
 }

@@ -8,7 +8,7 @@ from pyramid.view import view_config
     renderer='templates/home.jinja2'
 )
 def home(request):
-    return{"greeting": 'Your are Here ', "name": 'Sansanee'}
+    return{"greeting": 'Your are Here ', "name": 'Hawaii '}
 
 
 if __name__ == "__main__":
