@@ -11,7 +11,10 @@ import mysql.connector
 )
 def home(request):
     conn = mysql.connector.connect(
-        host="localhost", user="web_user", passwd='0eTnBQz4yE3jfO6R', database="pyramidproject")
+        host="localhost",
+        user="web_user",
+        passwd='0eTnBQz4yE3jfO6R',
+        database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
     inv = []
@@ -55,5 +58,5 @@ if __name__ == "__main__":
 
     config.scan()
     app = config.make_wsgi_app()
-server = make_server('0.0.0.0', 8080, app)
+server = make_server('0.0.0.0', 6543, app)
 server.serve_forever()

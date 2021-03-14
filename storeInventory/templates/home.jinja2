@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-<title> {{greeting}}, {{name}} </title>
+<title > {{greeting}}, {{name}} </title>
 <link rel="stylesheet" href="/static/style.css"/>
 </head>
 <body> 
-<h1 > {{greeting}} , {{name}} </h1>
-<img class="s1" src="/static/store2.jpg" alt="image" style="width:1000px"/>
+<h1 class="t"> {{greeting}} , {{name}} </h1>
+<img class="s1" src="/static/store2.jpg" alt="image" />
 <div class="txt"> Our Current Stock </div>
-<table>
+<table class="td">
 {% for item in inv %}
-    <tr>
+    <tr >
         {# <td> {{item.id}} </td> #}
         <td> <a href="{{item.link}}">{{item.name}}</a> </td>
         <td> <a href="edit/{{item.id}}">{{item.total}}</a> </td>
