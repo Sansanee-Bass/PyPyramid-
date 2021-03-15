@@ -33,6 +33,20 @@
      background-color: rgb(240, 116, 71);
  }
 
+ table, th, td {
+     border: 2px solid rgb(218, 123, 14);
+ }
+
+ a:hover {
+     color: white;
+     background-color: rgb(240, 116, 71);
+     ;
+ }
+
+ /* .hline {
+     font-size: 18pt;
+ } */
+
  /* body {
      margin: 50px;
      width: 100vw;

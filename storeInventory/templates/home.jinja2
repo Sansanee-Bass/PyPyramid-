@@ -11,11 +11,14 @@
 <div class="txt"> Our Current Stock </div>
 <table class="td">
 {% for item in inv %}
-    <tr >
-        {# <td> {{item.id}} </td> #}
-        <td> <a href="{{item.link}}">{{item.name}}</a> </td>
-        <td> <a href="edit/{{item.id}}">{{item.total}}</a> </td>
+    <tr class="hline">
+    <th>Product</th>
+    <th>Total</th>
     </tr>
+        {# <td> {{item.id}} </td> #}
+        <td><a href="{{item.link}}">{{item.name}}</a> </td>
+        <td><a href="edit/{{item.id}}">{{item.total}}</a> </td>
+    
 {% endfor %}
 </table>
 
