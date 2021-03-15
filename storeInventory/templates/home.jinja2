@@ -9,8 +9,10 @@
 <h1 class="t"> {{greeting}} , {{name}} </h1>
 <img class="s1" src="/static/store2.jpg" alt="image" />
 <div class="txt"> Our Current Stock </div>
-<table class="td">
+
+<div id="product_table">
 {% for item in inv %}
+<table class="td">
     <tr class="hline">
     <th>Product</th>
     <th>Total</th>
@@ -18,10 +20,11 @@
         {# <td> {{item.id}} </td> #}
         <td><a href="{{item.link}}">{{item.name}}</a> </td>
         <td><a href="edit/{{item.id}}">{{item.total}}</a> </td>
-    
+ </table>   
 {% endfor %}
-</table>
-
-
+</div>
 </body>
+<footer>
+ SanChr Company Limited
+</footer>
 </html>
