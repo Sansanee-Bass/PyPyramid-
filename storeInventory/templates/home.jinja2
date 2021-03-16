@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-<title > {{greeting}}, {{name}} </title>
+<title > {{greeting}} </title>
 <link rel="stylesheet" href="/static/style.css"/>
 </head>
 <body> 
 <h1 class="t"> {{greeting}} , {{name}} </h1>
 <img class="s1" src="/static/store2.jpg" alt="image" />
 <div class="txt"> Our Current Stock </div>
-
+{#-----------------------products table--------------------#}
 <div id="product_table">
 {% for item in inv %}
 <table class="td">
@@ -25,6 +25,6 @@
 </div>
 </body>
 <footer>
- SanChr Company Limited
+    {{foot}}
 </footer>
 </html>

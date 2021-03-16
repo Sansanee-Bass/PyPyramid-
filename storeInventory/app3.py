@@ -2,9 +2,10 @@ from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.view import view_config
 from pyramid.httpexceptions import HTTPFound
-import mysql.connector
+import mysql.connector  # imported sql connector for database
 
 
+#----------------- Show  page Home --------------------------#
 @view_config(
     route_name='hello',
     renderer='templates/home.jinja2'
@@ -20,9 +21,10 @@ def home(request):
     inv = []
     for (id, name, total, link) in cur:
         inv.append({'id': id, 'name': name, 'total': total, 'link': link})
-    return{"greeting": 'Welcome to', "name": 'SanChr Store inventory ', "inv": inv}
+    return{"foot": 'SanChris thanks you for trusting our products', "greeting": 'Welcome to SanChris Inventory Market', "inv": inv}
 
 
+#----------------- Show page edit ---------------------#
 @view_config(
     route_name='edit',
     renderer='templates/edit.jinja2'
@@ -44,9 +46,10 @@ def edit(request):
         cur.execute(
             "SELECT Id, name, total, link FROM Inventory WHERE Id = %(id)s", {'id': request.matchdict['id']})
         (id, name, total, link) = cur.fetchone()
-        return {"greeting": 'Edit Stock Inventory', "name": '', 'item': {'id': id, 'name': name, 'total': total, 'link': link}}
+        return {"foot": 'SanChris thanks you for trusting our products', "greeting": 'Edit Stock Inventory', "name": '', 'item': {'id': id, 'name': name, 'total': total, 'link': link}}
 
 
+#------------- Set up and run pyramid ang jinja2 --------------------#
 if __name__ == "__main__":
     config = Configurator()
     config.include('pyramid_jinja2')
@@ -58,5 +61,5 @@ if __name__ == "__main__":
 
     config.scan()
     app = config.make_wsgi_app()
-server = make_server('0.0.0.0', 8080, app)
+server = make_server('0.0.0.0', 8080, app)  # default port for pyramid is 6543
 server.serve_forever()

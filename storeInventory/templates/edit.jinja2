@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="/static/style.css"/>
 
 </head>
+{#---form table in edit page------------#}
 <body> 
     <form  method="POST">
-    
         <label for="name">Name:</label>
         <input type="text" name="name" value="{{item.name}}">
         <label for="total">Total:</label>
@@ -23,6 +23,6 @@
 <img class="ed" src="/static/store.jpg" alt="image" style="width:560px"/>
 </body>
 <footer>
- SanChr Company Limited
+    {{foot}}
 </footer>
 </html>
