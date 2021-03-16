@@ -14,23 +14,25 @@ def home(request):
     conn = mysql.connector.connect(
         host="localhost",
         user="web_user",
-        passwd='4aOMcvLHen7Cepxo',
+        passwd='0eTnBQz4yE3jfO6R',
         database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
     inv = []
     for (id, name, total, link) in cur:
         inv.append({'id': id, 'name': name, 'total': total, 'link': link})
+    return{"foot": 'SanChris thanks you for trusting our products', "greeting": 'Welcome to SanChris Inventory Market', "inv": inv}
+
+
 #----------------- Show page edit ---------------------#
-    route_name = 'edit',
-    renderer = 'templates/edit.jinja2'
-
-
+@view_config(
+    route_name='edit',
+    renderer='templates/edit.jinja2'
 )
 def edit(request):
-    conn=mysql.connector.connect(
-        host = "localhost", user = "web_user", passwd = '4aOMcvLHen7Cepxo', database = "pyramidproject")
-    cur=conn.cursor()
+    conn = mysql.connector.connect(
+        host="localhost", user="web_user", passwd='0eTnBQz4yE3jfO6R', database="pyramidproject")
+    cur = conn.cursor()
 
     if request.method == 'POST':
        # print({'name': request.POST['name'], 'total': request.POST['total'],
@@ -43,21 +45,21 @@ def edit(request):
     else:
         cur.execute(
             "SELECT Id, name, total, link FROM Inventory WHERE Id = %(id)s", {'id': request.matchdict['id']})
-        (id, name, total, link)=cur.fetchone()
+        (id, name, total, link) = cur.fetchone()
         return {"foot": 'SanChris thanks you for trusting our products', "greeting": 'Edit Stock Inventory', "name": '', 'item': {'id': id, 'name': name, 'total': total, 'link': link}}
 
 
 #------------- Set up and run pyramid ang jinja2 --------------------#
 if __name__ == "__main__":
-    config=Configurator()
+    config = Configurator()
     config.include('pyramid_jinja2')
     config.include('pyramid_debugtoolbar')
-    config.add_static_view(name = 'static',
-                           path = 'static')
+    config.add_static_view(name='static',
+                           path='static')
     config.add_route('hello', '/')
     config.add_route('edit', '/edit/{id}')
 
     config.scan()
-    app=config.make_wsgi_app()
-server=make_server('0.0.0.0', 8080, app)  # default port for pyramid is 6543
+    app = config.make_wsgi_app()
+server = make_server('0.0.0.0', 8080, app)  # default port for pyramid is 6543
 server.serve_forever()
