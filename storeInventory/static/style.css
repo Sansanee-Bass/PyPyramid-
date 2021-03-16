@@ -55,6 +55,37 @@
      grid-template-columns: 1fr 1fr;
  }
 
+ @media only screen and (min-width: 786px) {
+
+    /* #site {
+    width: 780px;
+    margin: 15px auto;
+    }
+
+    aside {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 20%;
+    }
+
+    aside>ul {
+
+        margin: 15px; */
+
+    /* }
+
+    main {
+
+        box-sizing: border-box;
+
+        display: inline-block;
+
+        width: 80%;
+
+    } */
+
+}
+
  /* .hline {
      font-size: 18pt;
  } */

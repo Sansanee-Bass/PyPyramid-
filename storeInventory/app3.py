@@ -13,14 +13,14 @@ def home(request):
     conn = mysql.connector.connect(
         host="localhost",
         user="web_user",
-        passwd='0eTnBQz4yE3jfO6R',
+        passwd='4aOMcvLHen7Cepxo',
         database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
     inv = []
     for (id, name, total, link) in cur:
         inv.append({'id': id, 'name': name, 'total': total, 'link': link})
-    return{"greeting": 'Welcome to', "name": 'SanChr Store inventory ', "inv": inv}
+    return{"foot": 'SanChris thanks you for trusting our Products', "greeting": 'Welcome to SanChris inventory market', "inv": inv}
 
 
 @view_config(
@@ -29,7 +29,7 @@ def home(request):
 )
 def edit(request):
     conn = mysql.connector.connect(
-        host="localhost", user="web_user", passwd='0eTnBQz4yE3jfO6R', database="pyramidproject")
+        host="localhost", user="web_user", passwd='4aOMcvLHen7Cepxo', database="pyramidproject")
     cur = conn.cursor()
 
     if request.method == 'POST':
