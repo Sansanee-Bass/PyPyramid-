@@ -55,7 +55,7 @@ if __name__ == "__main__":
     config.include('pyramid_jinja2')
     config.include('pyramid_debugtoolbar')
     config.add_static_view(name='static',
-                           path='static')
+                           path='model/static')
     config.add_route('hello', '/')
     config.add_route('edit', '/edit/{id}')
 
