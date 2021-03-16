@@ -1,0 +1,13 @@
+find out how to make secerte in python
+add config floder
+add modle view / controller
+
+
+
+things to try  and add:
+USER LOG in
+
+
+
+
+chris:insert slide show
