@@ -1,6 +1,6 @@
 find out how to make secerte in python
-add config floder
-add modle view / controller
+add config floder------------------>done
+add modle view / controller ------> done
 
 
 

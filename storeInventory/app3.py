@@ -8,7 +8,7 @@ import mysql.connector  # imported sql connector for database
 #----------------- Show  page Home --------------------------#
 @view_config(
     route_name='hello',
-    renderer='templates/home.jinja2'
+    renderer='view/templates/home.jinja2'
 )
 def home(request):
     conn = mysql.connector.connect(
@@ -27,7 +27,7 @@ def home(request):
 #----------------- Show page edit ---------------------#
 @view_config(
     route_name='edit',
-    renderer='templates/edit.jinja2'
+    renderer='view/templates/edit.jinja2'
 )
 def edit(request):
     conn = mysql.connector.connect(
