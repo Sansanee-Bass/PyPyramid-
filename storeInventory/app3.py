@@ -14,7 +14,7 @@ def home(request):
     conn = mysql.connector.connect(
         host="localhost",
         user="web_user",
-        passwd='4aOMcvLHen7Cepxo',  # please enter pws 0eTnBQz4yE3jfO6R
+        passwd='0eTnBQz4yE3jfO6R',  # please enter pws 0eTnBQz4yE3jfO6R
         database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
@@ -33,7 +33,7 @@ def home(request):
 )
 def edit(request):
     conn = mysql.connector.connect(
-        host="localhost", user="web_user", passwd='4aOMcvLHen7Cepxo', database="pyramidproject")  # please enter ypur pws
+        host="localhost", user="web_user", passwd='0eTnBQz4yE3jfO6R', database="pyramidproject")  # please enter ypur pws
     cur = conn.cursor()
 
     if request.method == 'POST':
@@ -60,7 +60,7 @@ def inventory(request):
     conn = mysql.connector.connect(
         host="localhost",
         user="web_user",
-        passwd='4aOMcvLHen7Cepxo',  # please enter pws 0eTnBQz4yE3jfO6R
+        passwd='0eTnBQz4yE3jfO6R',  # please enter pws 0eTnBQz4yE3jfO6R
         database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
@@ -79,7 +79,7 @@ def product(request):
     conn = mysql.connector.connect(
         host="localhost",
         user="web_user",
-        passwd='4aOMcvLHen7Cepxo',  # please enter pws 0eTnBQz4yE3jfO6R
+        passwd='0eTnBQz4yE3jfO6R',  # please enter pws 0eTnBQz4yE3jfO6R
         database="pyramidproject")
     cur = conn.cursor()
     cur.execute('SELECT Id, name, total, link FROM Inventory')
