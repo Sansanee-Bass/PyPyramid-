@@ -7,21 +7,21 @@
 </head>
 <body> 
 <h1 class="t"> {{greeting}} </h1>
+<nav>
+<ul id="nav_bar">
+    <a href="/product">Products</a>
+    <a href="/">Home</a>
+    <a href="/inventory">Inventory</a>
+</ul>
+</nav>
 <img class="s1" src="/static/img/store2.jpg" alt="image" />
-<div class="txt"> Our Current Stock </div>
-{#-----------------------products table--------------------#}
-<div id="product_table">
-{% for item in inv %}
-<table class="td">
-    <tr class="hline">
-    <th>Product</th>
-    <th>Total</th>
-    </tr>
-        {# <td> {{item.id}} </td> #}
-        <td><a href="{{item.link}}">{{item.name}}</a> </td>
-        <td><a href="edit/{{item.id}}">{{item.total}}</a> </td>
- </table>   
-{% endfor %}
+<div class="txt"> Samples </div>
+<div id="slideshow">
+{% for item in inv%}
+    <div class=""img_block>
+    <img class="img_box" src="{{item.link}}"/>
+    </div>
+{% endfor%}
 </div>
 </body>
 <footer>

@@ -9,6 +9,13 @@
 </head>
 {#---form table in edit page------------#}
 <body> 
+<nav>
+<ul id="nav_bar">
+    <a href="/product">Products</a>
+    <a href="/">Home</a>
+    <a href="/inventory">Inventory</a>
+</ul>
+</nav>
     <form  method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" value="{{item.name}}">

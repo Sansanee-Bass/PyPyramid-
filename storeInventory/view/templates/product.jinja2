@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title > {{greeting}} </title>
+<link rel="stylesheet" href="/static/style/style.css"/>
+</head>
+<body> 
+<h1 class="t"> {{greeting}} </h1>
+<nav>
+<ul id="nav_bar">
+    <a href="/product">Products</a>
+    <a href="/">Home</a>
+    <a href="/inventory">Inventory</a>
+</ul>
+</nav>
+<div class="txt"> Our Current Stock </div>
+{#-----------------------products table--------------------#}
+<div id="product_table">
+{% for item in inv %}
+<table class="td">
+    <tr class="hline">
+    <th><strong>{{item.name}}</strong></th>
+    <th>Product</th>
+    <th>Total</th>
+    </tr>
+        {# <td> {{item.id}} </td> #}
+        <td><img class="img_layout" src="{{item.link}}"/></td>
+        <td><a href="{{item.link}}">{{item.name}}</a> </td>
+        <td><a href="">{{item.total}}</a> </td>
+ </table>   
+{% endfor %}
+</div>
+</body>
+<footer>
+    {{foot}}
+</footer>
+</html>
